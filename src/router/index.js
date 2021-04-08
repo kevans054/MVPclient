@@ -1,25 +1,47 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import LoginForm from '../views/LoginForm.vue'
+import SignupForm from '../views/SignupForm.vue'
+import Feed from '../views/Feed.vue'
+import UserProfile from '../components/UserProfile.vue'
+import EventForm from '../views/EventForm.vue'
+// import EventEdit from '../views/EventEdit.vue'
+
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: "LoginForm",
+    component: LoginForm
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+    path: '/sign-up',
+    name: "SignupForm",
+    component: SignupForm
+  },
+  {
+    path: '/feed',
+    name: "Feed",
+    component: Feed
+  },
+  {
+    path: '/userprofile',
+    name: "UserProfile",
+    component: UserProfile
+  },
+  {
+    path: '/eventform',
+    name: "EventForm",
+    component: EventForm
+  },
+  // {
+  //   path: '/eventedit',
+  //   name: "EventEdit",
+  //   component: EventEdit
+  // }
 ]
-
 const router = new VueRouter({
   routes
 })
